@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.calendar {
+  font-family: "Roboto", sans-serif;
+
+  background-color: var(--panel-color);
+  border-radius: 10px;
+  padding: 10px;
+
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.monthYear {
+  display: flex;
+  gap: 0 10px;
+  justify-content: center;
+}
+
+.days table {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  height: 246.5px;
+  border-spacing: 0;
+}
+
+.cell {
+  font-weight: 400;
+  padding: 0;
+  border-radius: 10px;
+  width: 14%; /* good practice ? */
+}
+
+.cell:hover {
+  background-color: var(--hover-color);
+  cursor: pointer;
+}
+
+.days th {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.choosedDay {
+  font-weight: 400;
+  padding: 0;
+  border-radius: 10px;
+  width: 14%;
+  background-color: var(--hover-color);
+}
+
+.notThisMonth {
+  color: var(--other-monthes-days-color);
+}
+
+.notThisMonth:hover {
+  cursor: default;
+  background-color: rgba(255, 255, 255, 0);
+}
+

@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.navbar {
+    font-family: 'Roboto', sans-serif;
+
+    background-color: var(--panel-color);
+    border-radius: 10px;
+    padding: 10px;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.userInfo {
+    display: flex;
+    gap: 0 10px;
+    height: calc(100% - 10px);
+    align-items: center;
+    padding: 5px;
+}
+
+.userInfo:hover {
+    background-color: var(--hover-color);
+    border-radius: 10px;
+}
+
+.userName {
+    display: block;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    max-width: 210px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.userMenu {
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    z-index: 10;
+    border-radius: 10px;
+    height: 0;
+    transition: height 0.5s;
+    overflow: hidden;
+    box-shadow: 1px 0px 17px -3px rgba(0, 0, 0, 0.2);
+
+}
+
+.userMenuOption {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+}
+
+.userMenuOption:hover {
+    background-color: rgba(135, 135, 135, 0.2);
+}
+
+.userInfoContainer {
+    z-index: 10;
+}
+
+.userInfoContainer:hover .userMenu {
+    height: 83px;
+    cursor: pointer;
+}
+
+.options {
+    height: 100%;
+    display: flex;
+    gap: 0 5px;
+    align-items: center;
+}
+
+.buttonHolder {
+    padding: 5px;
+    height: 40px;
+    width: 40px;
+}
+
+.options .buttonHolder:hover {
+    background-color: var(--hover-color);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+/* dialog windows */
+
+.dialogWindow {
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+
+    display: none;
+    flex-direction: column;
+    gap: 20px 0;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    width: 300px;
+}
+
+.dialogTitle {
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.dialogIcon {
+    margin: auto;
+}
+
+.dialogBtns {
+    display: flex;
+    justify-content: center;
+    gap: 0 20px;
+}
+
+.dialogBtn {
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(236, 236, 236);
+}
+
+.dialogBtn:hover {
+    cursor: pointer;
+    background-color: rgb(215, 215, 215);
+}
+
+.inputTitle {
+    padding: 0;
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.manageAccountInput {
+    outline: none;
+    border: 1px solid rgb(138, 138, 138);
+    border-radius: 10px;
+    padding: 10px;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    display: block;
+    width: 280px;
+}
+
+.manageAccountInput:hover {
+    background-color: rgb(236, 236, 236);
+}
+
+.incorrectInput {
+    display: none;
+
+    color: red;
+    font-size: 12px;
+    font-weight: 400;
+
+    margin: 3px 0 0 0;
+    padding: 0;
+}
+
+.blackout {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000070;
+    z-index: 99;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.bgsList img {
+    border-radius: 10px;
+}
+
+.bgsList img:hover {
+    cursor: pointer;
+}
+
+.bgsList input {
+    padding: 10px;
+}
+
+.bgsList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px 0;
+
+    height: 400px;
+    padding: 7px;
+    overflow: auto;
+}
+
+.choosedBG {
+    box-shadow: 0 0 0 3px #ffffff, 0 0 0 6px #000000;
+}
