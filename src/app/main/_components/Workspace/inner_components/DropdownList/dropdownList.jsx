@@ -31,7 +31,7 @@ const DropdownList = ({current, elems, onChangeElem}) => {
       >
         {
           elems.filter(el => el !== currElem).map(el => (
-            <div className={styles.elem} onClick={() => onClickElem(el)}>{el}</div>
+            <div key={el} className={styles.elem} onClick={() => onClickElem(el)}>{el}</div>
           ))
         }
       </div>

@@ -105,7 +105,7 @@ const Calendar = ({onDateChange}) => {
             <tr>
               {
                 ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map(day => (
-                  <th>{day}</th>
+                  <th key={day}>{day}</th>
                 ))
               }
             </tr>
@@ -113,9 +113,9 @@ const Calendar = ({onDateChange}) => {
               days.map((week, i1) => (
                 <tr key={i1}>
                   {week.map(day => {
-                    if (day > 0 && choosedDay !== day) return <td className={styles.cell} onClick={() => handleDayChange(day)}>{day}</td>;
-                    if (choosedDay === day) return <td className={styles.choosedDay}>{day}</td>
-                    return <td className={styles.cell + ' ' + styles.notThisMonth} >{-day}</td>
+                    if (day > 0 && choosedDay !== day) return <td key={day} className={styles.cell} onClick={() => handleDayChange(day)}>{day}</td>;
+                    if (choosedDay === day) return <td key={day} className={styles.choosedDay}>{day}</td>
+                    return <td key={day} className={styles.cell + ' ' + styles.notThisMonth} >{-day}</td>
                   })}
                 </tr>
               ))

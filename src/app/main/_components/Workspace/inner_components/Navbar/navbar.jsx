@@ -125,7 +125,7 @@ const Navbar = ({userName, email, onChangeBG, donesUndones, changeTheme}) => {
           <div className={styles.bgsList}>
             {
               Array.from({length: 4}, (_, i) => i+1).map(num => (
-                <Image src={`/bgs/bg${num}.jpg`} height={150} width={270} alt="" onClick={() => {onChangeBG(`/bgs/bg${num}.jpg`); setChoosedBG(num);}} className={choosedBG === num ? styles.choosedBG : {}}/>
+                <Image key={num} src={`/bgs/bg${num}.jpg`} height={150} width={270} alt="" onClick={() => {onChangeBG(`/bgs/bg${num}.jpg`); setChoosedBG(num);}} className={choosedBG === num ? styles.choosedBG : {}}/>
               ))
             }
           </div>
