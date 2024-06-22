@@ -27,6 +27,7 @@ function Workspace() {
   const [toDoList, setToDoList] = useState(user.toDo);
   const [doneList, setDoneList] = useState(user.done);
   const [task, setTask] = useState([-1, '', '', "todo"]);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const handleSave = (ind, title, desc, list) => {
     if (ind === -1) {
@@ -56,7 +57,7 @@ function Workspace() {
   }
 
   return (
-    <div className={styles.container + ' ' + theme} ref={containerRef}>
+    <div className={styles.container + ' ' + theme} ref={containerRef} onScroll={() => setIsScrolling(!isScrolling)}>
       <Navbar
         userName={user.userName}
         email={user.email}
@@ -64,7 +65,7 @@ function Workspace() {
         donesUndones={{undones: user.toDo.length, dones: user.done.length}}
         changeTheme={handleChangeTheme}
       />
-      <Calendar onDateChange={(d) => setDate([d.getDate(), d.getMonth(), d.getFullYear()])}/>
+      <Calendar onDateChange={(d) => setDate([d.getDate(), d.getMonth(), d.getFullYear()])} isScrolling={isScrolling} />
       <Editor
         task={task}
         saveTask={(ind, title, desc, list) => handleSave(ind, title, desc, list)}

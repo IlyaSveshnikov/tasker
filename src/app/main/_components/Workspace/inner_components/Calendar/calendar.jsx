@@ -67,7 +67,7 @@ const groupDaysByWeeks = (month, year) => {
   return daysGroupedByWeeks;
 }
 
-const Calendar = ({onDateChange}) => {
+const Calendar = ({onDateChange, isScrolling}) => {
 
   const currentDate = new Date();
 
@@ -96,8 +96,8 @@ const Calendar = ({onDateChange}) => {
   return (
     <div className={styles.calendar}>
       <div className={styles.monthYear}>
-        <DropdownList current={month} elems={monthes} onChangeElem={(month) => handleMonthChange(month)} /> 
-        <DropdownList current={year} elems={years} onChangeElem={(year) => handleYearChange(year)}  />
+        <DropdownList current={month} elems={monthes} onChangeElem={(month) => handleMonthChange(month)} isScrolling={isScrolling} />
+        <DropdownList current={year} elems={years} onChangeElem={(year) => handleYearChange(year)} isScrolling={isScrolling} />
       </div>
       <div className={styles.days}>
         <table>
